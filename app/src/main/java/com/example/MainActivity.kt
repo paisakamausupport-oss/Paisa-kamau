@@ -18,7 +18,9 @@ import androidx.compose.material.icons.filled.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import com.example.ui.auth.AuthScreen
+import androidx.compose.ui.Alignment
 import com.example.ui.components.PaisaKamauCard
+import com.example.ui.components.PaisaKamauButton
 import com.example.ui.theme.PaisaKamauTheme
 import com.google.firebase.Firebase
 import com.google.firebase.auth.auth
@@ -64,12 +66,24 @@ fun MainScreen() {
             when (selectedItem) {
                 0 -> {
                     Column(modifier = Modifier.padding(16.dp)) {
-                        Text("Dashboard", style = MaterialTheme.typography.headlineSmall, color = MaterialTheme.colorScheme.onBackground)
+                        Text("Solve & Unlock Reward", style = MaterialTheme.typography.titleMedium, color = MaterialTheme.colorScheme.onBackground)
                         Spacer(modifier = Modifier.height(16.dp))
+                        
+                        // Puzzle Card
                         PaisaKamauCard(modifier = Modifier.fillMaxWidth()) {
-                            Column(modifier = Modifier.padding(24.dp)) {
-                                Text("Available Balance", style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
-                                Text("रू 1,250.00", style = MaterialTheme.typography.headlineLarge, color = MaterialTheme.colorScheme.onSurface)
+                            Column(modifier = Modifier.padding(24.dp), horizontalAlignment = Alignment.CenterHorizontally) {
+                                Text("13 + 36 = ?", style = MaterialTheme.typography.headlineLarge)
+                                Spacer(modifier = Modifier.height(24.dp))
+                                
+                                Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(16.dp)) {
+                                    PaisaKamauButton(onClick = {}, text = "58", modifier = Modifier.weight(1f))
+                                    PaisaKamauButton(onClick = {}, text = "49", modifier = Modifier.weight(1f))
+                                }
+                                Spacer(modifier = Modifier.height(16.dp))
+                                Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(16.dp)) {
+                                    PaisaKamauButton(onClick = {}, text = "43", modifier = Modifier.weight(1f))
+                                    PaisaKamauButton(onClick = {}, text = "51", modifier = Modifier.weight(1f))
+                                }
                             }
                         }
                     }
