@@ -1,0 +1,75 @@
+{
+  "users": {
+    "collection": "users",
+    "document": "uid",
+    "fields": {
+      "uid": "string",
+      "displayName": "string",
+      "email": "string",
+      "phoneNumber": "string",
+      "createdAt": "timestamp",
+      "accountStatus": "string",
+      "referralCode": "string",
+      "streak": "number",
+      "lastCheckinAt": "timestamp",
+      "totalCoins": "number"
+    }
+  },
+  "tasks": {
+    "collection": "tasks",
+    "document": "taskId",
+    "fields": {
+      "taskId": "string",
+      "title": "string",
+      "type": "string",
+      "rewardCoins": "number",
+      "videoUrl": "string",
+      "videoId": "string",
+      "durationSeconds": "number",
+      "active": "boolean"
+    }
+  },
+  "transactions": {
+    "collection": "transactions",
+    "document": "transactionId",
+    "fields": {
+      "transactionId": "string",
+      "uid": "string",
+      "type": "string",
+      "amount": "number",
+      "status": "string",
+      "createdAt": "timestamp",
+      "referenceId": "string"
+    }
+  },
+  "withdrawals": {
+    "collection": "withdrawals",
+    "document": "withdrawalId",
+    "fields": {
+      "withdrawalId": "string",
+      "uid": "string",
+      "amountCoins": "number",
+      "amountNPR": "number",
+      "paymentMethod": "string",
+      "destination": "string",
+      "status": "string",
+      "createdAt": "timestamp",
+      "reviewedAt": "timestamp",
+      "reviewedBy": "string",
+      "rejectionReason": "string"
+    }
+  },
+  "configs": {
+    "collection": "configs",
+    "document": "economy",
+    "fields": {
+      "adRewardR": "number",
+      "dailyAdLimit": "number",
+      "adCooldownSeconds": "number",
+      "checkinRewardR": "number",
+      "minWithdrawalNPR": "number",
+      "conversionRate": "number",
+      "enabledPaymentMethods": "array"
+    }
+  }
+}
